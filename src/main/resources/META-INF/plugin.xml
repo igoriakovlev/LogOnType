@@ -1,0 +1,24 @@
+<idea-plugin>
+  <id>org.jetbrains.logOnType</id>
+  <name>Typing progress logger</name>
+  <version>0.0.1</version>
+  <vendor email="igor.yakovlev@jetbrains.com" url="jetbrains.com">Igor Yakovlev</vendor>
+
+  <depends>com.intellij.modules.lang</depends>
+  <idea-version since-build="193"/>
+
+  <depends>com.intellij.modules.java</depends>
+  <idea-version since-build="201"/>
+
+  <description>Typing progress logger to collect analytics</description>
+
+  <actions>
+    <action id="ToggleLogOnTypeAction" class="org.jetbrains.plugins.logOnType.LogOnTypeAction" text="LogOnType [Enable]">
+      <add-to-group group-id="ToolsMenu"/>
+    </action>
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <typedHandler implementation="org.jetbrains.plugins.logOnType.LogOnTypeHandler"/>
+  </extensions>
+</idea-plugin>

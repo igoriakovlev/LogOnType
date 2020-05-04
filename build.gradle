@@ -1,0 +1,25 @@
+plugins {
+  id 'java'
+  id "org.jetbrains.intellij" version "0.4.18"
+  id 'org.jetbrains.kotlin.jvm' version '1.3.60'
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+  // Define IntelliJ Platform API version to use for building this plugin
+  version '2020.1' //'2020.1' - do not forget to change plugin.xml
+  plugins 'java'
+}
+
+patchPluginXml {
+  untilBuild = '202.*' // '202.*'
+}
+
+sourceCompatibility = 1.8
